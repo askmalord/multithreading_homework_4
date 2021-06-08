@@ -7,9 +7,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 public class Main {
     public static final int COUNT_OF_SPECIALISTS = 15;
+    public static final int CAPACITY_OF_QUEUE = 500;
 
     public static void main(String[] args) throws InterruptedException {
-        Queue<String> queueOfCalls = new ArrayBlockingQueue<String>(500, true);
+        Queue<String> queueOfCalls = new ArrayBlockingQueue<String>(CAPACITY_OF_QUEUE, true);
         CallGenerator callGenerator = new CallGenerator(queueOfCalls);
         SpecialistThread specialistThread;
         callGenerator.start();
